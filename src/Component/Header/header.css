@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    opacity: 0.7;
+    padding: 0;
+    border-radius: 25px;
+    width: fit-content; /* Thêm dòng này */
+    left: 50%;           /* Kết hợp với transform */
+    transform: translateX(-50%);
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #555;
+}
+
+.navbar a.active {
+    background-color: #666;
+}
