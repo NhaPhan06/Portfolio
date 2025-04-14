@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './header.css'
 
 const Header = () => {
+
+
     return (
         <header className="navbar position-fixed top-0 mt-3">
             <a href="#home">Home</a>

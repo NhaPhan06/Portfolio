@@ -1,5 +1,34 @@
 @import "tailwindcss";
 
 body {
-  @apply bg-black;
+  @apply bg-black text-white;
+  
+  scrollbar-width: none;        
+  -ms-overflow-style: none; 
+
+  background: linear-gradient(-45deg,
+    #050505, 
+    #1a1a1a, 
+    #132341, 
+    #1a1a1a);
+  background-size: 400% 400%;
+  animation: gradientWaves 20s ease infinite;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+@keyframes gradientWaves {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+body::-webkit-scrollbar {
+  display: none;             
 }
