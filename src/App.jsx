@@ -6,7 +6,7 @@ import Main from './Component/Main/Main'
 import Index from './Component/Index/Index'
 import Project from './Component/Project/Project'
 import About  from './Component/About/About'
-
+import Technologies from './Component/Technologies/Technologies'
 import Project2 from './Component/Project/Project2'
 
 
@@ -21,6 +21,7 @@ function App() {
         <Project />
         {/* <Project2/> */}
         <About/>
+        <Technologies/>
       </div>
     </>
   )

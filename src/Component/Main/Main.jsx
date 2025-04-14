@@ -6,7 +6,7 @@ import { Sparkles } from "../../lib/sparkles";
 const Main = () => {
   return (
     <section
-      id="about"
+      id="home"
       className="grid grid-cols-3 h-screen bg-cover bg-center bg-no-repeat"
     >
       <div
@@ -25,7 +25,8 @@ const Main = () => {
 
         {/* Sparkles */}
         <Sparkles
-          density={1000}
+          density={2000}
+          mousemove={true}
           size={2}
           direction="top"
           className="absolute inset-x-0 top-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
