@@ -9,7 +9,7 @@ import React, {
   useState,
 } from 'react';
 import { motion, AnimatePresence, MotionConfig } from 'motion/react';
-import { cn } from '@/lib/utils';
+import { cn } from '../../lib/utils';
 import { XIcon } from 'lucide-react';
 const DialogContext = React.createContext(null);
 function useDialog() {

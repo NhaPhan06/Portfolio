@@ -5,6 +5,10 @@ import Header from './Component/Header/Header'
 import Main from './Component/Main/Main'
 import Index from './Component/Index/Index'
 import Project from './Component/Project/Project'
+import About  from './Component/About/About'
+
+import Project2 from './Component/Project/Project2'
+
 
 function App() {
 
@@ -15,6 +19,8 @@ function App() {
         <Main/>
         <Index />
         <Project />
+        {/* <Project2/> */}
+        <About/>
       </div>
     </>
   )
