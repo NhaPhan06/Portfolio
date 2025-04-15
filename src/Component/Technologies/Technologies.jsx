@@ -1,5 +1,7 @@
 import React from "react";
 import "./technologies.css";
+import GradientText from "../../lib/GradientText/GradientText"
+
 import {
   SiHtml5,
   SiCss3,
@@ -39,27 +41,32 @@ const Technologies = () => {
   ];
 
   return (
-    <section id="technologies" className="h-screen w-full flex flex-col items-center py-[30vh]">
-  <h1 className="text-center text-white text-2xl">
-    Technologies and Tools
-  </h1>
+    <section
+      id="technologies"
+      className="h-screen w-full flex flex-col items-center py-[30vh]"
+    >
+      <GradientText
+        colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+        animationSpeed={3}
+        className="custom-class text-6xl"
+      >
+        Technologies
+      </GradientText>
 
-  <div className="flex-grow flex justify-center items-center">
-    <div className="flex flex-wrap justify-center gap-3 w-[80%]">
-      {techs.map((tech, idx) => (
-        <div
-          key={idx}
-          className="flex items-center gap-2 border-2 border-solid border-indigo-500 text-white px-4 py-2 rounded-lg shadow hover:scale-105 transition"
-        >
-          {tech.icon}
-          <span>{tech.name}</span>
+      <div className="flex-grow flex justify-center items-center">
+        <div className="flex flex-wrap justify-center gap-3 w-[80%]">
+          {techs.map((tech, idx) => (
+            <div
+              key={idx}
+              className="flex items-center gap-2 border-2 border-solid border-indigo-500 text-white px-4 py-2 rounded-lg shadow hover:scale-105 transition"
+            >
+              {tech.icon}
+              <span>{tech.name}</span>
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-  </div>
-</section>
-
-
+      </div>
+    </section>
   );
 };
 

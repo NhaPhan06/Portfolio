@@ -1,5 +1,6 @@
 import React from "react";
 import "./about.css";
+import GradientText from "../../lib/GradientText/GradientText"
 import {
   SiHtml5,
   SiCss3,
@@ -15,10 +16,16 @@ const About = () => {
       id="about-me"
       className="h-screen w-full flex flex-col items-center py-[30vh]"
     >
-      <h1 className="text-center text-white text-2xl">About</h1>
+      <GradientText
+        colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+        animationSpeed={3}
+        className="custom-class text-6xl"
+      >
+        About
+      </GradientText>
 
       <div className="flex-grow flex justify-center items-center">
-        <div className="flex flex-wrap justify-center gap-3 w-[80%]">
+        <div className="flex flex-wrap justify-center w-[80%]">
           <h5>
             I’m Ed (Nha), a backend developer from Quảng Trị, Vietnam. Currently
             completing my graduation while leading projects with real-world

@@ -1,5 +1,7 @@
 import React from "react";
 import "./index.css";
+import Earth from "../../lib/globe";
+import Threads from "../../lib/Threads/Threads ";
 
 const Index = () => {
   return (
@@ -37,9 +39,15 @@ const Index = () => {
                 .getElementById("about-me")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="col-span-2 row-span-4 col-start-1 row-start-1 group bg-gradient-to-t from-[#050a0a] to-[#051818] hover:from-[#05070a] hover:to-[#0b1a3b] relative before:absolute before:inset-0 before:bg-[url('/noise.gif')] before:opacity-5 rounded-2xl border"
+            className="col-span-2 row-span-4 col-start-1 row-start-1 group bg-gradient-to-t from-[#050a0a] to-[#051818] hover:from-[#05070a] hover:to-[#0b1a3b] relative before:absolute before:inset-0 before:bg-[url('/noise.gif')] before:opacity-5 rounded-2xl border overflow-hidden"
           >
-            <div className="relative flex flex-col justify-end h-full">
+            {/* 🌍 Earth background */}
+            <div className="absolute inset-0 z-0 pointer-events-none opacity-50">
+              <Earth/>
+            </div>
+
+            {/* 🧠 Nội dung chính */}
+            <div className="relative z-10 flex flex-col justify-end h-full">
               <div className="px-6 py-5">
                 <div className="bg-green-400 group-hover:bg-blue-600 transition-all duration-500 ease-in-out w-fit px-3 rounded-full text-sm py-1 text-white mb-1">
                   Who's This?
@@ -55,7 +63,7 @@ const Index = () => {
                   and dark mode. Born in Quảng Trị, raised in the cloud.
                 </p>
               </div>
-              <div className="relative group-hover:-translate-y-2 transition-transform duration-500 ease-in-out"></div>
+              <div className="relative group-hover:-translate-y-2 transition-transform duration-500 ease-in-out" />
             </div>
           </div>
 
@@ -66,9 +74,20 @@ const Index = () => {
                 .getElementById("technologies")
                 ?.scrollIntoView({ behavior: "smooth" })
             }
-            className="col-span-4 row-span-2 col-start-1 row-start-5 group bg-gradient-to-t from-[#050a0a] to-[#051818] hover:from-[#05070a] hover:to-[#0b1a3b] relative before:absolute before:inset-0 before:bg-[url('/noise.gif')] before:opacity-5 rounded-2xl border"
+            className="col-span-4 row-span-2 col-start-1 row-start-5 group bg-gradient-to-t from-[#050a0a] to-[#051818] hover:from-[#05070a] hover:to-[#0b1a3b] relative rounded-2xl border overflow-hidden"
           >
-            <div className="relative flex flex-col justify-end h-full">
+            {/* 🔵 Threads background */}
+            <div className="absolute inset-0 z-0 pointer-events-none">
+              <Threads
+                color={[1, 1, 2]}
+                amplitude={4}
+                distance={0}
+                enableMouseInteraction={true}
+              />
+            </div>
+
+            {/* 🟢 Nội dung */}
+            <div className="relative z-10 flex flex-col justify-end h-full">
               <div className="px-6 py-5">
                 <div className="bg-green-400 group-hover:bg-blue-600 transition-all duration-500 ease-in-out w-fit px-3 rounded-full text-sm py-1 text-white mb-1">
                   Technologies
@@ -84,7 +103,7 @@ const Index = () => {
                   fluent API and occasionally yell at TypeScript.
                 </p>
               </div>
-              <div className="relative group-hover:-translate-y-2 transition-transform duration-500 ease-in-out"></div>
+              <div className="relative group-hover:-translate-y-2 transition-transform duration-500 ease-in-out" />
             </div>
           </div>
 

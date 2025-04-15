@@ -9,6 +9,8 @@ import {
   DialogDescription,
   DialogContainer,
 } from "./linear-dialog";
+import GradientText from "../../lib/GradientText/GradientText";
+
 import { Plus } from "lucide-react";
 const items = [
   {
@@ -37,7 +39,13 @@ const items = [
 export default function Project() {
   return (
     <section id="project" className="h-screen w-full flex flex-col py-[20vh]">
-      <h1 className="text-center text-white text-2xl">Project</h1>
+      <GradientText
+        colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
+        animationSpeed={3}
+        className="custom-class text-6xl"
+      >
+        Project
+      </GradientText>
       <div className="flex-grow flex justify-center items-center">
         <div className="flex gap-4 justify-center items-center w-[80%]">
           {items.map((item, i) => {
