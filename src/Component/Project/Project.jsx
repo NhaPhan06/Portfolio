@@ -36,87 +36,87 @@ const items = [
     tags: ["Pathway", "Adventure", "Peaks", "Challenging", "Breathtaking"],
   },
 ];
+
 export default function Project() {
   return (
-    <section id="project" className="h-screen w-full flex flex-col py-[20vh]">
+    <section id="project" className="min-h-screen w-full flex flex-col py-10 md:py-[20vh] px-4">
       <GradientText
         colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
         animationSpeed={3}
-        className="custom-class text-6xl"
+        className="custom-class text-4xl md:text-6xl mb-8 md:mb-0 text-center"
       >
         Project
       </GradientText>
-      <div className="flex-grow flex justify-center items-center">
-        <div className="flex gap-4 justify-center items-center w-[80%]">
-          {items.map((item, i) => {
-            return (
-              <>
-                <Dialog
-                  transition={{
-                    type: "spring",
-                    bounce: 0.05,
-                    duration: 0.5,
+      
+      <div className="flex-grow flex justify-center items-center w-full">
+        <div className="flex flex-col md:flex-row gap-6 md:gap-4 justify-center items-center w-full md:w-[90%] lg:w-[80%] max-w-6xl">
+          {items.map((item, i) => (
+            <Dialog
+              key={item.id}
+              transition={{
+                type: "spring",
+                bounce: 0.05,
+                duration: 0.5,
+              }}
+            >
+              <DialogTrigger
+                style={{
+                  borderRadius: "12px",
+                }}
+                className="flex w-full flex-col overflow-hidden border dark:bg-black bg-gray-300 hover:bg-gray-200 dark:hover:bg-gray-950 shadow-md"
+              >
+                <DialogImage
+                  src={item.url?.src}
+                  alt=""
+                  className="h-48 md:h-64 w-full object-cover"
+                />
+                <div className="flex flex-grow flex-row items-end justify-between p-3">
+                  <div>
+                    <DialogTitle className="text-zinc-950 text-lg md:text-xl dark:text-zinc-50">
+                      {item.title}
+                    </DialogTitle>
+                  </div>
+                  <button className="absolute bottom-2 right-2 p-2 dark:bg-gray-900 bg-gray-400 hover:bg-gray-500 rounded-full dark:hover:bg-gray-800">
+                    <Plus className="w-5 h-5 md:w-6 md:h-6" />
+                  </button>
+                </div>
+              </DialogTrigger>
+              
+              <DialogContainer className="pt-8 md:pt-20">
+                <DialogContent
+                  style={{
+                    borderRadius: "24px",
                   }}
+                  className="relative flex h-full mx-auto flex-col overflow-y-auto border dark:bg-black bg-gray-300 hover:bg-gray-200 dark:hover:bg-gray-950 w-[95%] sm:w-[90%] md:w-[80%] lg:w-[900px]"
                 >
-                  <DialogTrigger
-                    style={{
-                      borderRadius: "12px",
-                    }}
-                    className="flex w-full flex-col overflow-hidden  border    dark:bg-black bg-gray-300 hover:bg-gray-200 dark:hover:bg-gray-950"
-                  >
-                    <DialogImage
-                      src={item.url?.src}
-                      alt=""
-                      className=" h-64 w-full object-cover"
-                    />
-                    <div className="flex flex-grow flex-row items-end justify-between p-3">
-                      <div>
-                        <DialogTitle className="text-zinc-950 text-xl dark:text-zinc-50">
-                          {item.title}
-                        </DialogTitle>
-                      </div>
-                      <button className="absolute bottom-2 right-2 p-2 dark:bg-gray-900 bg-gray-400 hover:bg-gray-500 rounded-full dark:hover:bg-gray-800">
-                        <Plus className="w-6 h-6" />
-                      </button>
-                    </div>
-                  </DialogTrigger>
-                  <DialogContainer className="pt-20">
-                    <DialogContent
-                      style={{
-                        borderRadius: "24px",
-                      }}
-                      className=" relative flex h-full mx-auto flex-col overflow-y-auto border dark:bg-black bg-gray-300 hover:bg-gray-200 dark:hover:bg-gray-950 lg:w-[900px] w-[80%] "
-                    >
-                      <DialogImage
-                        src={item.url.src}
-                        alt=""
-                        className="h-full  object-contain w-[60%] mx-auto"
-                      />
-                      <div className="p-6">
-                        <DialogTitle className="text-5xl text-zinc-950 dark:text-zinc-50">
-                          {item.title}
-                        </DialogTitle>
+                  <DialogImage
+                    src={item.url.src}
+                    alt=""
+                    className="h-full object-contain w-full sm:w-[80%] md:w-[60%] mx-auto pt-4"
+                  />
+                  <div className="p-4 md:p-6">
+                    <DialogTitle className="text-3xl md:text-5xl text-zinc-950 dark:text-zinc-50">
+                      {item.title}
+                    </DialogTitle>
 
-                        <DialogDescription
-                          disableLayoutAnimation
-                          variants={{
-                            initial: { opacity: 0, scale: 0.8, y: -40 },
-                            animate: { opacity: 1, scale: 1, y: 0 },
-                            exit: { opacity: 0, scale: 0.8, y: -50 },
-                          }}
-                        >
-                          <p className="mt-2 text-zinc-500 dark:text-zinc-500">
-                            {item.description}
-                          </p>
-                        </DialogDescription>
-                      </div>
-                      <DialogClose className="text-zinc-50  dark:bg-gray-900 bg-gray-400 p-4 hover:bg-gray-500 rounded-full dark:hover:bg-gray-800" />
-                    </DialogContent>
-                  </DialogContainer>
-                </Dialog>
-              </>
-            );
-          })}
+                    <DialogDescription
+                      disableLayoutAnimation
+                      variants={{
+                        initial: { opacity: 0, scale: 0.8, y: -40 },
+                        animate: { opacity: 1, scale: 1, y: 0 },
+                        exit: { opacity: 0, scale: 0.8, y: -50 },
+                      }}
+                    >
+                      <p className="mt-2 text-sm md:text-base text-zinc-500 dark:text-zinc-500">
+                        {item.description}
+                      </p>
+                    </DialogDescription>
+                  </div>
+                  <DialogClose className="absolute top-2 right-2 text-zinc-50 dark:bg-gray-900 bg-gray-400 p-3 md:p-4 hover:bg-gray-500 rounded-full dark:hover:bg-gray-800" />
+                </DialogContent>
+              </DialogContainer>
+            </Dialog>
+          ))}
         </div>
       </div>
     </section>

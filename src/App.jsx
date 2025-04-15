@@ -8,6 +8,7 @@ import Project from "./Component/Project/Project";
 import About from "./Component/About/About";
 import Technologies from "./Component/Technologies/Technologies";
 import Footer from "./Component/Footer/Footer";
+import Contact from "./Component/Contact/Contact"
 import Project2 from "./Component/Project/Project2";
 import Iridescence from "./lib/Iridescence/Iridescence";
 
@@ -32,7 +33,8 @@ function App() {
           <Project />
           <About />
           <Technologies />
-          {/* <Footer/> */}
+          <Contact/>
+          <Footer/>
         </div>
       </div>
     </>
