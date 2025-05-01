@@ -3,12 +3,12 @@ import "./index.css";
 import Earth from "../../lib/globe";
 import Threads from "../../lib/Threads/Threads ";
 
+
 const Index = () => {
   return (
     <>
       <section id="index" className="w-full min-h-screen">
         <div className="w-[95vw] sm:w-[90vw] lg:w-[70vw] mx-auto py-10 grid grid-cols-1 sm:grid-cols-6 sm:grid-rows-6 gap-4">
-
           {/* About Me */}
           <div
             onClick={() =>

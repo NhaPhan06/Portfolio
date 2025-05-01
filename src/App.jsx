@@ -8,33 +8,32 @@ import Project from "./Component/Project/Project";
 import About from "./Component/About/About";
 import Technologies from "./Component/Technologies/Technologies";
 import Footer from "./Component/Footer/Footer";
-import Contact from "./Component/Contact/Contact"
-import Project2 from "./Component/Project/Project2";
+import Contact from "./Component/Contact/Contact";
 import Iridescence from "./lib/Iridescence/Iridescence";
-
+import { isMobile } from "react-device-detect";
 
 function App() {
   return (
     <>
       <div className="relative">
         {/* 🔮 Iridescence background */}
-        <div className="absolute inset-0 z-0 pointer-events-none">
+        {/* <div className="absolute inset-0 z-0 pointer-events-none">
           <Iridescence
-            color={[0, 0, 0.2]}
+            color={[0.1, 0.2, 0.5]}
             mouseReact={false}
             amplitude={1}
-            speed={1.0}
+            speed={2.0}
           />
-        </div>
+        </div> */}
         <div className="relative z-10">
           <Header />
           <Main />
-          <Index />
+          {!isMobile && <Index />}
           <Project />
           <About />
           <Technologies />
-          <Contact/>
-          <Footer/>
+          <Contact />
+          <Footer />
         </div>
       </div>
     </>

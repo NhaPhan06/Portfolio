@@ -1,6 +1,6 @@
 import React from "react";
 import "./technologies.css";
-import GradientText from "../../lib/GradientText/GradientText"
+import GradientText from "../../lib/GradientText/GradientText";
 
 import {
   SiHtml5,
@@ -43,28 +43,26 @@ const Technologies = () => {
   return (
     <section
       id="technologies"
-      className="min-h-screen w-full flex flex-col items-center py-10 md:py-[20vh] px-4"
+      className="w-full min-h-screen flex flex-col items-center justify-center gap-20 px-4 py-10"
     >
       <GradientText
         colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
         animationSpeed={3}
-        className="custom-class text-4xl md:text-6xl mb-8 md:mb-0"
+        className="custom-class text-3xl md:text-6xl mb-6 md:mb-0"
       >
         Technologies
       </GradientText>
 
-      <div className="flex-grow flex justify-center items-center w-full">
-        <div className="flex flex-wrap justify-center gap-2 md:gap-3 w-full md:w-[80%] max-w-4xl overflow-y-auto max-h-[60vh] md:max-h-none p-2">
-          {techs.map((tech, idx) => (
-            <div
-              key={idx}
-              className="flex items-center gap-1 md:gap-2 border-2 border-solid border-indigo-500 text-white px-2 md:px-4 py-1 md:py-2 rounded-lg shadow hover:scale-105 transition text-sm md:text-base"
-            >
-              <span className="text-lg md:text-xl">{tech.icon}</span>
-              <span>{tech.name}</span>
-            </div>
-          ))}
-        </div>
+      <div className="flex flex-wrap justify-center gap-2 md:gap-3 w-full md:w-[80%] max-w-4xl overflow-y-auto p-2">
+        {techs.map((tech, idx) => (
+          <div
+            key={idx}
+            className="flex items-center gap-1 md:gap-2 border-2 border-solid border-indigo-500 text-white px-2 md:px-4 py-1 md:py-2 rounded-lg shadow hover:scale-105 transition text-xs md:text-base"
+          >
+            <span className="text-base md:text-xl">{tech.icon}</span>
+            <span>{tech.name}</span>
+          </div>
+        ))} 
       </div>
     </section>
   );

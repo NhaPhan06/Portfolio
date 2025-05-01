@@ -5,32 +5,32 @@ import GradientText from "../../lib/GradientText/GradientText"
 const Contact = () => {
   return (
     <>
-      <section id="contact" className="relative z-10 overflow-hiddenpy-20 lg:py-[100px]">
+      <section id="contact" className="relative z-10 overflow-hidden py-10 lg:py-[100px]">
         <GradientText
           colors={["#40ffaa", "#4079ff", "#40ffaa", "#4079ff", "#40ffaa"]}
           animationSpeed={3}
-          className="custom-class text-6xl"
+          className="custom-class text-4xl md:text-6xl"
         >
           Contact
         </GradientText>
         <div className="container">
           <div className="-mx-4 flex flex-wrap lg:justify-between">
             <div className="w-full px-4 lg:w-1/2 xl:w-6/12">
-              <div className="mb-12 max-w-[570px] lg:mb-0">
-                <span className="mb-4 block text-base font-semibold text-primary">
+              <div className="mb-8 max-w-[570px] lg:mb-0">
+                <span className="mb-4 block text-sm md:text-base font-semibold text-primary">
                   Connect with me
                 </span>
-                <p className="mb-9 text-base leading-relaxed text-body-color dark:text-dark-6">
+                <p className="mb-6 text-sm md:text-base leading-relaxed text-body-color dark:text-dark-6">
                   If you want to know more about me or my work, or if you would
                   just like to say hello, send me a message. I'd love to hear
                   from you.
                 </p>
 
-                <div className="mb-8 flex w-full max-w-[370px]">
-                  <div className="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
+                <div className="mb-6 flex w-full max-w-[370px]">
+                  <div className="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[60px] sm:max-w-[60px]">
                     <svg
-                      width="32"
-                      height="32"
+                      width="28"
+                      height="28"
                       viewBox="0 0 32 32"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -57,20 +57,20 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="w-full">
-                    <h4 className="mb-1 text-xl font-bold text-white">
+                    <h4 className="mb-1 text-lg md:text-xl font-bold text-white">
                       Phone Number
                     </h4>
-                    <p className="text-base text-body-color dark:text-dark-6">
+                    <p className="text-sm md:text-base text-body-color dark:text-dark-6">
                       (+84)0981906418
                     </p>
                   </div>
                 </div>
 
-                <div className="mb-8 flex w-full max-w-[370px]">
-                  <div className="mr-6 flex h-[60px] w-full max-w-[60px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[70px] sm:max-w-[70px]">
+                <div className="mb-6 flex w-full max-w-[370px]">
+                  <div className="mr-4 flex h-[50px] w-full max-w-[50px] items-center justify-center overflow-hidden rounded bg-primary/5 text-primary sm:h-[60px] sm:max-w-[60px]">
                     <svg
-                      width="32"
-                      height="32"
+                      width="28"
+                      height="28"
                       viewBox="0 0 32 32"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -82,10 +82,10 @@ const Contact = () => {
                     </svg>
                   </div>
                   <div className="w-full">
-                    <h4 className="mb-1 text-xl font-bold text-white">
+                    <h4 className="mb-1 text-lg md:text-xl font-bold text-white">
                       Email Address
                     </h4>
-                    <p className="text-base text-body-color dark:text-dark-6">
+                    <p className="text-sm md:text-base text-body-color dark:text-dark-6">
                       phanthanhnha06@gmail.com
                     </p>
                   </div>
@@ -93,7 +93,7 @@ const Contact = () => {
               </div>
             </div>
             <div className="w-full px-4 lg:w-1/2 xl:w-5/12">
-              <div className="relative rounded-lg p-8 shadow-lg  sm:p-12">
+              <div className="relative rounded-lg p-6 shadow-lg sm:p-8">
                 <form>
                   <ContactInputBox
                     type="text"
@@ -111,7 +111,7 @@ const Contact = () => {
                     placeholder="Your Phone"
                   />
                   <ContactTextArea
-                    row="6"
+                    row="4"
                     placeholder="Your Message"
                     name="details"
                     defaultValue=""
@@ -119,7 +119,7 @@ const Contact = () => {
                   <div>
                     <button
                       type="submit"
-                      className="w-full rounded border border-primary bg-primary p-3 text-white transition hover:bg-opacity-90"
+                      className="w-full rounded border border-primary bg-primary p-2 text-sm md:text-base text-white transition hover:bg-opacity-90"
                     >
                       Send Message
                     </button>

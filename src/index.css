@@ -2,12 +2,13 @@
 
 body {
   @apply bg-black text-white;
-  
-  scrollbar-width: none;        
-  -ms-overflow-style: none; 
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
-  display: none;             
+  display: none;
 }
-
+  
