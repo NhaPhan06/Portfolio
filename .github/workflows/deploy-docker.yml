@@ -6,9 +6,8 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
-    runs-on: ubuntu-latest
-
+  build:
+    runs-on: ubuntu-latest       # Build trên GitHub (miễn phí)
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -29,15 +28,22 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-portfolio:latest
 
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v0.1.4
-        with:
-          host: ${{ secrets.SSH_HOST }}
-          username: ${{ secrets.SSH_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
-          script: |
-            docker pull ${{ secrets.DOCKERHUB_USERNAME }}/my-portfolio:latest
-            docker stop my-portfolio || true
-            docker rm my-portfolio || true
-            docker run -d --name my-portfolio -p 80:80 ${{ secrets.DOCKERHUB_USERNAME }}/my-portfolio:latest
+  deploy:
+    runs-on: self-hosted          # Deploy trên laptop server của bạn
+    needs: build                  # Chờ build xong mới deploy
+    steps:
+      - name: Pull & Deploy
+        run: |
+          docker pull ${{ secrets.DOCKERHUB_USERNAME }}/my-portfolio:latest
+          docker stop my-portfolio || true
+          docker rm my-portfolio || true
+          docker run -d \
+            --name my-portfolio \
+            -p 6060:80 \
+            --restart unless-stopped \
+            ${{ secrets.DOCKERHUB_USERNAME }}/my-portfolio:latest
+
+      - name: Verify
+        run: |
+          sleep 3
+          curl -f http://localhost:6060 && echo "✅ Deploy thành công!"
